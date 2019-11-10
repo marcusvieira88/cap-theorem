@@ -105,6 +105,9 @@ Implementing Serializable transactions:
 
 ## Saga Pattern - compensate operations 
  Delete to execute if the payment goes wrong 
+ 
+ ![Screenshot](Saga_Choreography.jpeg)
+ ![Screenshot](Saga_Orchestration.jpeg)
 
 ## Reconciliation- protocol SEPA swift
  Scheduling implementation(check if all data is write)
