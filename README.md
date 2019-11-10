@@ -103,9 +103,7 @@ Implementing Serializable transactions:
 
 # 5 Patterns Data Consistency
 
-## Saga Pattern - compensate operations 
- Delete to execute if the payment goes wrong 
- 
+## Saga Pattern - compensate operations  
  ![Screenshot](Saga_Choreography.jpeg)
  ![Screenshot](Saga_Orchestration.jpeg)
 
