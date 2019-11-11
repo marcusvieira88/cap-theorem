@@ -1,7 +1,7 @@
 # CAP Theorem
 This project has some examples of the CAP theorem
 
-Can have only 2 not 3
+Can have only 2 of 3
 
 # Examples 
 
@@ -31,8 +31,8 @@ To claim to do so is claiming either that the system operates on a single node (
 
 # Distributed Systems
 
-non-critical and cheap x expensive and reliable
-faults and maintenance can be handled in a node level
+- Non-critical and cheap x expensive and reliable
+- Faults and maintenance can be handled in a node level
 
 # Reliability
 When something goes wrong in system it called fault, fault is a component of the system that is not working as expected, 
@@ -44,62 +44,62 @@ scaling up (vertical scaling – powerful machine) or scaling out (horizontal sc
 
 # Maintainability
 
-The majority cost of the system is not in the initial development but in the maintenance 
+- The majority cost of the system is not in the initial development but in the maintenance 
 (fixing bugs, failures, modifying it for new use cases, technical debt, etc).
 
-Operability: Make it easy for operations team maintenance.
+- Operability: Make it easy for operations team maintenance.
 
-Simplicity: Make it easy for new engineers understand the system.
+- Simplicity: Make it easy for new engineers understand the system.
 
-Evolvability: Make it easy for engineers make system changes in the future. It is known as extensibility, modifiability and plasticity.
+- Evolvability: Make it easy for engineers make system changes in the future. It is known as extensibility, modifiability and plasticity.
 
 # Replication
 
-High Availability
-Disconnected operations
-Latency
-Scalability
+- High Availability
+- Disconnected operations
+- Latency
+- Scalability
 
 - Single-leader replication -> all writes go to one node(the leader) send stream change data to the followers(reads can be performed from any follower)but data can be stale(old)
 - Multi-leader replication -> all writes go to one of several leader nodes, this node send stream change data to the other leaders and followers(reads can be performed from any follower)but data can be stale(old)
 - Leaderless replication -> all writes go to one of several nodes, and read from several nodes in paralles in order to detect and correct nodes with stale data.
 
-multi-leader leaderless replication -> weak consistency guarantees, need to use algorithms to resolve and merge write conflicts
+- Multi-leader leaderless replication -> weak consistency guarantees, need to use algorithms to resolve and merge write conflicts
 
-Synchronous and Asynchronous replication, it can impact in the leader fails in you need to promote a follower to lead, we need to take care of this replication lag(can not be high) 
+- Synchronous and Asynchronous replication, it can impact in the leader fails in you need to promote a follower to lead, we need to take care of this replication lag(can not be high) 
 
-Consistency-models:
-Read-after-write consistency
-Monotomic reads
-Consistency prefix reads
+#### Consistency-models:
+- Read-after-write consistency
+- Monotomic reads
+- Consistency prefix reads
 
 # Transaction
 
-Transaction isolation levels:
+### Transaction isolation levels:
 
-read-committed
-snapshot isolation (repeatable read)
-serializable
+- Read-committed
+- Snapshot isolation (repeatable read)
+- Serializable
 
-Race Conditions:
+### Race Conditions:
 
-Dirty Reads - the read commited level avoid dirty reads
-Dirty writes - client override data from another, almost all transaction implementations prevent it. 
-Read skew(nonrepeatable reads) - 
-Lost updates - Select fro update
-Write skew
-Phantom Reads
+- Dirty Reads - the read commited level avoid dirty reads
+- Dirty writes - client override data from another, almost all transaction implementations prevent it. 
+- Read skew(nonrepeatable reads) - 
+- Lost updates - Select fro update
+- Write skew
+- Phantom Reads
 
-Only Serializable isolation prevents against all race conditions.
+### Only Serializable isolation prevents against all race conditions.
 
 Implementing Serializable transactions:
- - Literally executing transactions in a serial order
- - Two-phase locking
- - Serializable snapshot isolation
+- Literally executing transactions in a serial order
+- Two-phase locking
+- Serializable snapshot isolation
 
- Synchronous Architecture 
+# Synchronous Architecture 
 
- Circuit Breaker avoid a cascade failure when one service fail (ResilientJ4, Netflix Histrix)
+Circuit Breaker avoid a cascade failure when one service fail (ResilientJ4, Netflix Histrix)
 
 # 5 Patterns Data Consistency
 
@@ -134,9 +134,9 @@ Implementing Serializable transactions:
 
 ## Event First
 
-Message Broker - RabbitMQ or ActiveMQ
-Message Streams - Kafka or Kinesis - order in the partitions don't have dead queue
-Event Database - 
+- Message Broker - RabbitMQ or ActiveMQ
+- Message Streams - Kafka or Kinesis - order in the partitions don't have dead queue
+- Event Database
 
 *Accept inconsistency (Reports , data analytics, recommendations, statistics)*
 
