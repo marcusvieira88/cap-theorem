@@ -101,7 +101,7 @@ Implementing Serializable transactions:
 
 Circuit Breaker avoid a cascade failure when one service fail (ResilientJ4, Netflix Histrix)
 
-# 5 Patterns Data Consistency
+# Patterns Data Consistency
 
 ## Saga Pattern - compensate operations  
  ![Screenshot](Saga_Choreography.jpeg)
